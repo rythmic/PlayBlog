@@ -1,0 +1,11 @@
+@(entry: BlogEntry)
+
+@import views.html.helper.MarkdownParser._
+
+@title = {
+    @entry.title - <em>@entry.date.format("yyyy-MM-dd HH:mm")</em>
+}
+
+@main(title, nav = "blog") {
+    @parseMarkdown(entry.content)
+}
